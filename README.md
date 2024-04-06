@@ -24,6 +24,69 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+**Feature Scaling**
+```
+import pandas as pd
+from scipy import stats
+import numpy as np
+```
+```
+import pandas as pd
+df=pd.read_csv("/content/bmi.csv")
+df
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/376dd65a-8a46-4e5a-aa06-89db3bf431f6)
+```
+df.head()
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/33268cf2-cc37-41c2-bad9-cbd2601a933c)
+```
+import numpy as np
+max_vals=np.max(np.abs(df[['Height','Weight']]))
+max_vals
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/ff3d3a86-1323-4af3-995f-dd5681da7c86)
+```
+from sklearn.preprocessing import StandardScaler
+sc=StandardScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/d1399553-bb11-495a-99e5-622ff96c20b1)
+```
+from sklearn.preprocessing import MinMaxScaler
+sc=MinMaxScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/8172543a-3361-49da-97be-84430ddb9f61)
+```
+from sklearn.preprocessing import Normalizer
+Scaler=Normalizer
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/68ce3578-0f70-48f2-b9ea-1a678840c015)
+```
+df=pd.read_csv("/content/bmi.csv")
+```
+```
+from sklearn.preprocessing import MaxAbsScaler
+scaler = MaxAbsScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df
+```
+![image](https://github.com/SJananisenthilkumar/EXNO-4-DS/assets/144871139/1aedf04d-036c-4544-a2d5-bb05ed2663cd)
+**Feature Selection**
+```
+import pandas as pd
+import numpy as np
+import seaborn as sns
+```
+```
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score,confusion_matrix
+```
 # RESULT:
        # INCLUDE YOUR RESULT HERE
